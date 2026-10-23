@@ -1,11 +1,70 @@
 date;heure;equipe;adversaire;lieu;domicile;score
-# Exemple fictif. Équipes, horaires et lieux seulement : jamais de nom de joueur.
-# score : à remplir après le match (28-24), vide avant. domicile : oui ou non.
-10/10/2026;14:00;U13 garçons;HBC Les Ormes;Gymnase Jean-Moulin;oui;24-19
-17/10/2026;16:00;U15 filles;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;18-21
-18/10/2026;15:00;Seniors garçons;ES Val-Fleuri;Gymnase Jean-Moulin;oui;31-27
-24/10/2026;14:00;U13 garçons;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;
-25/10/2026;11:00;U11 mixte;HBC Les Ormes;Gymnase Jean-Moulin;oui;
-31/10/2026;18:30;Seniors filles;AL Montagne;Gymnase Jean-Moulin;oui;
-07/11/2026;14:00;U15 filles;ES Val-Fleuri;Salle des Tilleuls;oui;
-14/11/2026;16:00;Seniors garçons;HBC Les Ormes;Gymnase des Ormes;non;
+# Exemple fictif : l'AS Exemple Handball, un week-end sur deux, d'octobre 2026 à juin 2027.
+# Équipes, horaires et lieux seulement : jamais de nom de joueur.
+# Dans cette démo, les scores sont remplis d'avance pour que la page reste vivante ;
+# dans votre club, on remplit le score après le match (28-24), et on le laisse vide avant.
+# domicile : oui ou non.
+10/10/2026;11:00;U11 mixte;HBC Les Ormes;Gymnase Jean-Moulin;oui;11-15
+10/10/2026;14:00;U13 garçons;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;23-22
+10/10/2026;16:00;U15 filles;ES Val-Fleuri;Gymnase Jean-Moulin;oui;16-18
+10/10/2026;18:30;Seniors filles;AL Montagne;Gymnase de Montagne;non;30-29
+24/10/2026;11:00;U11 mixte;ES Val-Fleuri;Salle du Val-Fleuri;non;22-19
+24/10/2026;14:00;U13 garçons;AL Montagne;Gymnase Jean-Moulin;oui;22-27
+24/10/2026;16:00;U15 filles;Entente Bois-Joli;Complexe sportif du Bois-Joli;non;26-27
+25/10/2026;15:00;Seniors garçons;HBC Les Ormes;Gymnase des Ormes;non;36-31
+07/11/2026;11:00;U11 mixte;Entente Bois-Joli;Gymnase Jean-Moulin;oui;23-22
+07/11/2026;14:00;U13 garçons;HB Plaine-Haute;Gymnase de Plaine-Haute;non;17-14
+07/11/2026;18:30;Seniors filles;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;29-21
+08/11/2026;15:00;Seniors garçons;ES Val-Fleuri;Gymnase Jean-Moulin;oui;25-28
+21/11/2026;11:00;U11 mixte;HBC Les Ormes;Gymnase des Ormes;non;11-17
+21/11/2026;16:00;U15 filles;ES Val-Fleuri;Salle du Val-Fleuri;non;15-25
+21/11/2026;18:30;Seniors filles;AL Montagne;Gymnase Jean-Moulin;oui;27-30
+22/11/2026;15:00;Seniors garçons;Entente Bois-Joli;Complexe sportif du Bois-Joli;non;29-27
+05/12/2026;14:00;U13 garçons;AL Montagne;Gymnase de Montagne;non;20-18
+05/12/2026;16:00;U15 filles;Entente Bois-Joli;Gymnase Jean-Moulin;oui;20-20
+05/12/2026;18:30;Seniors filles;HB Plaine-Haute;Gymnase de Plaine-Haute;non;31-28
+06/12/2026;15:00;Seniors garçons;HBC Les Ormes;Gymnase Jean-Moulin;oui;34-25
+09/01/2027;11:00;U11 mixte;Entente Bois-Joli;Complexe sportif du Bois-Joli;non;21-15
+09/01/2027;14:00;U13 garçons;HB Plaine-Haute;Gymnase Jean-Moulin;oui;15-22
+09/01/2027;16:00;U15 filles;HBC Les Ormes;Gymnase des Ormes;non;23-19
+09/01/2027;18:30;Seniors filles;US Saint-Martin;Gymnase Jean-Moulin;oui;24-27
+23/01/2027;11:00;U11 mixte;HBC Les Ormes;Gymnase Jean-Moulin;oui;12-20
+23/01/2027;14:00;U13 garçons;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;26-25
+23/01/2027;16:00;U15 filles;ES Val-Fleuri;Gymnase Jean-Moulin;oui;15-26
+24/01/2027;15:00;Seniors garçons;Entente Bois-Joli;Salle des Tilleuls;oui;30-29
+06/02/2027;11:00;U11 mixte;ES Val-Fleuri;Salle du Val-Fleuri;non;11-16
+06/02/2027;14:00;U13 garçons;AL Montagne;Gymnase Jean-Moulin;oui;28-23
+06/02/2027;18:30;Seniors filles;HB Plaine-Haute;Salle des Tilleuls;oui;28-27
+07/02/2027;15:00;Seniors garçons;HBC Les Ormes;Gymnase des Ormes;non;25-30
+20/02/2027;11:00;U11 mixte;Entente Bois-Joli;Gymnase Jean-Moulin;oui;18-22
+20/02/2027;16:00;U15 filles;HBC Les Ormes;Salle des Tilleuls;oui;27-24
+20/02/2027;18:30;Seniors filles;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;27-26
+21/02/2027;15:00;Seniors garçons;ES Val-Fleuri;Gymnase Jean-Moulin;oui;32-28
+06/03/2027;14:00;U13 garçons;US Saint-Martin;Salle des Tilleuls;oui;27-20
+06/03/2027;16:00;U15 filles;ES Val-Fleuri;Salle du Val-Fleuri;non;24-22
+06/03/2027;18:30;Seniors filles;AL Montagne;Gymnase Jean-Moulin;oui;28-28
+07/03/2027;15:00;Seniors garçons;Entente Bois-Joli;Complexe sportif du Bois-Joli;non;33-27
+20/03/2027;11:00;U11 mixte;ES Val-Fleuri;Salle des Tilleuls;oui;22-12
+20/03/2027;14:00;U13 garçons;AL Montagne;Gymnase de Montagne;non;27-14
+20/03/2027;16:00;U15 filles;Entente Bois-Joli;Gymnase Jean-Moulin;oui;26-23
+20/03/2027;18:30;Seniors filles;HB Plaine-Haute;Gymnase de Plaine-Haute;non;30-21
+03/04/2027;11:00;U11 mixte;Entente Bois-Joli;Complexe sportif du Bois-Joli;non;21-19
+03/04/2027;14:00;U13 garçons;HB Plaine-Haute;Gymnase Jean-Moulin;oui;20-21
+03/04/2027;16:00;U15 filles;HBC Les Ormes;Gymnase des Ormes;non;17-22
+04/04/2027;15:00;Seniors garçons;ES Val-Fleuri;Salle du Val-Fleuri;non;27-25
+01/05/2027;11:00;U11 mixte;HBC Les Ormes;Gymnase Jean-Moulin;oui;20-21
+01/05/2027;14:00;U13 garçons;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;21-24
+01/05/2027;18:30;Seniors filles;AL Montagne;Gymnase de Montagne;non;27-31
+02/05/2027;15:00;Seniors garçons;Entente Bois-Joli;Gymnase Jean-Moulin;oui;32-28
+15/05/2027;11:00;U11 mixte;ES Val-Fleuri;Salle du Val-Fleuri;non;18-16
+15/05/2027;16:00;U15 filles;Entente Bois-Joli;Complexe sportif du Bois-Joli;non;25-19
+15/05/2027;18:30;Seniors filles;HB Plaine-Haute;Gymnase Jean-Moulin;oui;28-32
+16/05/2027;15:00;Seniors garçons;HBC Les Ormes;Gymnase des Ormes;non;34-32
+29/05/2027;14:00;U13 garçons;HB Plaine-Haute;Gymnase de Plaine-Haute;non;25-21
+29/05/2027;16:00;U15 filles;HBC Les Ormes;Gymnase Jean-Moulin;oui;27-21
+29/05/2027;18:30;Seniors filles;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;26-23
+30/05/2027;15:00;Seniors garçons;ES Val-Fleuri;Gymnase Jean-Moulin;oui;29-28
+12/06/2027;11:00;U11 mixte;HBC Les Ormes;Gymnase des Ormes;non;12-20
+12/06/2027;14:00;U13 garçons;US Saint-Martin;Gymnase Jean-Moulin;oui;28-23
+12/06/2027;16:00;U15 filles;ES Val-Fleuri;Salle du Val-Fleuri;non;22-27
+12/06/2027;18:30;Seniors filles;AL Montagne;Gymnase Jean-Moulin;oui;28-27
