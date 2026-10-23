@@ -12,6 +12,7 @@ Ils sont livrés avec les données **fictives** de l'AS Exemple Handball, le clu
 | **Robot de garde** | Le lundi | Vérifie que les trois autres tournent, et prévient sinon | Non |
 
 L'atelier pas à pas qui accompagne ce modèle : [Ma première tâche programmée](https://fair-asso.fr/formation-n4-atelier.html).
+La page que fabrique le robot du site, avec les données fictives : [julesmoreau62.github.io/modele-automatisations-club](https://julesmoreau62.github.io/modele-automatisations-club/).
 
 ## Trois règles avant de commencer
 
@@ -52,7 +53,9 @@ Tout se règle dans **Settings**, **Secrets and variables**, **Actions**. Une **
 1. Le dépôt doit être **public** (offre gratuite de GitHub).
 2. **Settings**, **Pages**, **Source** : **GitHub Actions**.
 3. Variable `PUBLIER_SITE` = `oui`, puis lancez **Site du club** à la main.
-4. L'adresse du site s'affiche dans l'exécution (étape « Publier »).
+4. L'adresse du site s'affiche dans l'exécution (étape « Publier »). Celle du modèle : https://julesmoreau62.github.io/modele-automatisations-club/
+
+Les matchs du modèle sont fictifs, avec des scores remplis d'avance pour que la page d'exemple reste vivante toute la saison. Dans votre club, le score se remplit après le match.
 
 Le site ne montre que des informations publiques : équipes, horaires, lieux, scores. Jamais de nom de joueur.
 Pour que les bénévoles n'aient pas à toucher au dépôt, tenez le tableau des matchs dans le tableur du club, publiez-le au format CSV et mettez son adresse dans `SOURCE_MATCHS`.
