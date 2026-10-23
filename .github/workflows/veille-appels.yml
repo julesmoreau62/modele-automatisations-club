@@ -1,0 +1,43 @@
+# Robot de veille : chaque lundi, il relève les appels à projets dont la date limite est à venir.
+# Fiche R.E.L.A.I.S. : docs/fiches-relais.md · Réglages : README.md
+name: Veille des appels à projets
+
+on:
+  schedule:
+    - cron: "23 7 * * 1"          # le lundi à 7 h 23, heure de Paris
+      timezone: "Europe/Paris"
+  workflow_dispatch:
+    inputs:
+      date_simulee:
+        description: "Simuler une date (AAAA-MM-JJ)"
+        required: false
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: veille-appels
+
+jobs:
+  veille:
+    if: vars.ROBOTS_ACTIFS != 'non'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Installer la bibliothèque de l'IA (version figée)
+        run: pip install --disable-pip-version-check -r scripts/requirements-veille.txt
+      - name: Lire les sources et préparer la veille
+        run: python scripts/veille.py
+        env:
+          MODE_ESSAI: ${{ vars.MODE_ESSAI }}
+          DATE_SIMULEE: ${{ inputs.date_simulee }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # facultatif : sans clé, tri par mots-clés
+          IA_MODELE: ${{ vars.IA_MODELE }}

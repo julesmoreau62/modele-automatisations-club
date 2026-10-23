@@ -1,0 +1,11 @@
+date;quoi;qui;rappels;repetition;lien
+# Exemple fictif de l'AS Exemple Handball : remplacez chaque ligne par les échéances de votre club.
+# date : JJ/MM/AAAA · rappels : nombre de jours avant l'échéance, séparés par des virgules (le jour même est toujours rappelé)
+# repetition : vide, « chaque année » ou « chaque mois » · qui : un rôle, jamais un nom
+01/11/2026;Vérifier que les robots tournent (onglet Actions) et relire ce tableau;Administrateurs du dépôt;0;chaque mois;
+13/11/2026;Déposer le dossier de subvention de fonctionnement de la mairie (date d'exemple);Trésorier;30,7,1;chaque année;
+15/12/2026;Renouveler l'assurance du club (date d'exemple);Président;30,7;chaque année;
+15/01/2027;Préparer les reçus fiscaux des dons de l'année écoulée;Trésorier;14;chaque année;
+01/03/2027;Surveiller l'ouverture de la campagne de l'Agence nationale du sport (date indicative);Trésorier;14;chaque année;https://www.agencedusport.fr/les-projets-sportifs-federaux-psf
+13/06/2027;Assemblée générale : envoyer les convocations dans le délai fixé par nos statuts;Secrétaire;30,15,7;chaque année;
+13/09/2027;Déclarer en préfecture les changements de dirigeants votés à l'AG (trois mois au plus tard, loi de 1901, article 5);Président;30,7;chaque année;https://www.service-public.gouv.fr/associations/vosdroits/F1121

@@ -1,0 +1,33 @@
+/* Le site du club : une seule page, lisible sur téléphone. Changez la couleur du club ici. */
+:root{
+  --club:#0B5D3B;
+  --fond:#F6F7F4;
+  --carte:#FFFFFF;
+  --texte:#14202B;
+  --doux:#56616C;
+  --trait:#DDE1DA;
+}
+@media (prefers-color-scheme:dark){
+  :root{--fond:#0F161D;--carte:#16212B;--texte:#E9EDE6;--doux:#A6B1BC;--trait:#2A3742}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--texte);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.cadre{max-width:860px;margin-inline:auto;padding-inline:16px}
+.haut{background:var(--club);color:#fff;padding:40px 0 36px}
+.haut h1{margin:4px 0 10px;font-size:clamp(2rem,6vw,3rem);line-height:1.05}
+.ville{margin:0;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;opacity:.85}
+.intro{margin:0;max-width:56ch;opacity:.92}
+main section{margin:36px 0}
+h2{font-size:1.35rem;margin:0 0 14px}
+.liste{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.liste li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 16px;padding:14px 16px;background:var(--carte);border:1px solid var(--trait);border-radius:6px}
+.liste time{grid-column:1/-1;color:var(--doux);font-size:.88rem}
+.liste p{margin:0}
+.liste span{grid-column:1/-1;color:var(--doux);font-size:.9rem}
+.liste strong{grid-row:2;grid-column:2;font-size:1.2rem;font-variant-numeric:tabular-nums}
+.vide{color:var(--doux)}
+.defile{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--carte);border:1px solid var(--trait);border-radius:6px;font-size:.95rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--trait)}
+thead th{color:var(--doux);font-weight:600;font-size:.85rem}
+.bas{border-top:1px solid var(--trait);padding:20px 0;color:var(--doux);font-size:.85rem}

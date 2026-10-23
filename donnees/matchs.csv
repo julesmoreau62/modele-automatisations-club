@@ -1,0 +1,11 @@
+date;heure;equipe;adversaire;lieu;domicile;score
+# Exemple fictif. Équipes, horaires et lieux seulement : jamais de nom de joueur.
+# score : à remplir après le match (28-24), vide avant. domicile : oui ou non.
+10/10/2026;14:00;U13 garçons;HBC Les Ormes;Gymnase Jean-Moulin;oui;24-19
+17/10/2026;16:00;U15 filles;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;18-21
+18/10/2026;15:00;Seniors garçons;ES Val-Fleuri;Gymnase Jean-Moulin;oui;31-27
+24/10/2026;14:00;U13 garçons;US Saint-Martin;Gymnase Coubertin, Saint-Martin;non;
+25/10/2026;11:00;U11 mixte;HBC Les Ormes;Gymnase Jean-Moulin;oui;
+31/10/2026;18:30;Seniors filles;AL Montagne;Gymnase Jean-Moulin;oui;
+07/11/2026;14:00;U15 filles;ES Val-Fleuri;Salle des Tilleuls;oui;
+14/11/2026;16:00;Seniors garçons;HBC Les Ormes;Gymnase des Ormes;non;

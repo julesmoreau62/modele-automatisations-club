@@ -1,0 +1,5 @@
+fichier;nom;jours_max
+# Les robots que surveille le robot de garde, et le nombre de jours au-delà duquel une absence est anormale.
+rappels-obligations.yml;Rappels des obligations;2
+veille-appels.yml;Veille des appels à projets;8
+site-du-club.yml;Site du club;2

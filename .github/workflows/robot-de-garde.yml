@@ -1,0 +1,33 @@
+# Robot de garde : chaque lundi, il vérifie que les autres robots tournent et n'ont pas échoué.
+# Il ne peut pas se surveiller lui-même : une personne regarde l'onglet Actions chaque mois.
+# Fiche R.E.L.A.I.S. : docs/fiches-relais.md · Réglages : README.md
+name: Robot de garde
+
+on:
+  schedule:
+    - cron: "7 8 * * 1"           # le lundi à 8 h 07, heure de Paris
+      timezone: "Europe/Paris"
+  workflow_dispatch:
+
+permissions:
+  actions: read                   # lire l'état des autres robots
+  contents: read
+  issues: write
+
+concurrency:
+  group: robot-de-garde
+
+jobs:
+  garde:
+    if: vars.ROBOTS_ACTIFS != 'non'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Vérifier les robots
+        run: python3 scripts/garde.py
+        env:
+          MODE_ESSAI: ${{ vars.MODE_ESSAI }}
+          GITHUB_TOKEN: ${{ github.token }}

@@ -1,0 +1,5 @@
+# La fiche publique du club, pour le site. Une information par ligne : « clé : valeur ».
+nom : AS Exemple Handball
+ville : Villeneuve
+presentation : Le handball pour tous à Villeneuve, de l'école de handball aux seniors, en compétition comme en loisir.
+contact : contact@club.example

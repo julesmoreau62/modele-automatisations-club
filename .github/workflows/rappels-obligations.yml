@@ -1,0 +1,42 @@
+# Robot des rappels : chaque matin, il relit donnees/obligations.csv et prévient avant chaque échéance.
+# Fiche R.E.L.A.I.S. : docs/fiches-relais.md · Réglages : README.md
+name: Rappels des obligations
+
+on:
+  schedule:
+    - cron: "17 7 * * *"          # tous les jours à 7 h 17, heure de Paris (pas à l'heure pile : GitHub y prend du retard)
+      timezone: "Europe/Paris"
+  workflow_dispatch:              # le bouton « Run workflow », pour tester
+    inputs:
+      date_simulee:
+        description: "Simuler une date (AAAA-MM-JJ), pour voir les rappels de ce jour-là"
+        required: false
+
+permissions:                      # le strict nécessaire : lire le dépôt, ouvrir un ticket
+  contents: read
+  issues: write
+
+concurrency:
+  group: rappels-obligations
+
+jobs:
+  rappels:
+    if: vars.ROBOTS_ACTIFS != 'non'   # l'interrupteur général
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Préparer les rappels du jour
+        run: python3 scripts/rappels.py
+        env:
+          MODE_ESSAI: ${{ vars.MODE_ESSAI }}
+          DATE_SIMULEE: ${{ inputs.date_simulee }}
+          GITHUB_TOKEN: ${{ github.token }}
+          CONTACTS: ${{ secrets.CONTACTS }}
+          SMTP_SERVEUR: ${{ secrets.SMTP_SERVEUR }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_UTILISATEUR: ${{ secrets.SMTP_UTILISATEUR }}
+          SMTP_MOT_DE_PASSE: ${{ secrets.SMTP_MOT_DE_PASSE }}
+          SMTP_EXPEDITEUR: ${{ secrets.SMTP_EXPEDITEUR }}

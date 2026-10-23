@@ -1,0 +1,8 @@
+nom;adresse;type
+# type : « page » (le robot relève les passages avec une date à venir) ou « flux » (flux RSS : articles de la semaine)
+# Ajoutez la page « appels à projets » de votre mairie, de votre département, de votre région et de votre comité.
+Fondation de France · appels à projets;https://www.fondationdefrance.org/fr/appels-a-projets;page
+Agence nationale du sport · projets sportifs fédéraux;https://www.agencedusport.fr/les-projets-sportifs-federaux-psf;page
+Agence nationale du sport · appel à projets Impact;https://www.agencedusport.fr/appel-projets-impact;page
+associations.gouv.fr · appels à projets;https://associations.gouv.fr/appels-projets;page
+Le Mouvement associatif · actualités;https://lemouvementassociatif.org/feed/;flux

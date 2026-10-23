@@ -1,0 +1,61 @@
+# Robot du site : chaque nuit, et à chaque modification des tableaux, il refait la page du club.
+# Il ne publie que si la variable PUBLIER_SITE vaut « oui » et que GitHub Pages est activé.
+# Fiche R.E.L.A.I.S. : docs/fiches-relais.md · Réglages : README.md
+name: Site du club
+
+on:
+  schedule:
+    - cron: "41 3 * * *"          # toutes les nuits à 3 h 41, heure de Paris
+      timezone: "Europe/Paris"
+  push:
+    branches: [main]
+    paths:
+      - "donnees/matchs.csv"
+      - "donnees/entrainements.csv"
+      - "donnees/club.txt"
+      - "site/**"
+      - "scripts/site.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-du-club
+  cancel-in-progress: true
+
+jobs:
+  construire:
+    if: vars.ROBOTS_ACTIFS != 'non'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Construire la page du club
+        run: python3 scripts/site.py
+        env:
+          SOURCE_MATCHS: ${{ vars.SOURCE_MATCHS }}
+          PUBLIER_SITE: ${{ vars.PUBLIER_SITE }}
+      - name: Préparer la publication
+        if: vars.PUBLIER_SITE == 'oui'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  publier:
+    needs: construire
+    if: vars.PUBLIER_SITE == 'oui'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:                  # seul ce travail peut publier
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publication.outputs.page_url }}
+    steps:
+      - name: Publier sur GitHub Pages
+        id: publication
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
